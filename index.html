@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Derivatives Navigator — Evidence-Based Derivatives Education</title>
+  <meta name="description" content="Derivatives Navigator: SEBI-aligned, research-backed derivatives education for retail traders. Courses, mentorship & risk-first training." />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="bg-white shadow">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center space-x-4">
+        <a href="index.html" class="font-bold text-xl text-indigo-700">Derivatives <span class="text-gray-800">Navigator</span></a>
+        <nav class="hidden md:flex space-x-6 text-sm">
+          <a href="index.html#why" class="hover:underline">Why DN</a>
+          <a href="courses.html" class="hover:underline">Courses</a>
+          <a href="mentorship.html" class="hover:underline">Mentorship</a>
+          <a href="index.html#compliance" class="hover:underline">Compliance</a>
+          <a href="faq.html" class="hover:underline">FAQ</a>
+        </nav>
+      </div>
+      <div class="flex items-center space-x-4">
+        <!-- Sign up -->
+<a href="signup.html" class="px-4 py-2 text-sm rounded-md border border-indigo-600 text-indigo-600">Sign up</a>
+
+<!-- Book a call -->
+<a href="book-call.html" class="px-4 py-2 bg-indigo-600 text-white rounded-md text-sm">Book a call</a>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="max-w-6xl mx-auto px-6 py-14 flex flex-col md:flex-row items-center gap-10">
+    <div class="flex-1">
+      <h1 class="text-3xl md:text-4xl font-extrabold leading-tight">From chaotic trading to disciplined derivatives mastery — SEBI-aligned, research-backed.</h1>
+      <p class="mt-4 text-gray-600">Derivatives Navigator transforms retail F&O traders into system-driven, risk-managed market participants through structured courses, tools, and mentorship.</p>
+      <div class="mt-6 flex items-center space-x-4">
+        <a href="courses.html" class="px-6 py-3 bg-indigo-600 text-white rounded-md shadow">Explore courses</a>
+        <a href="free-masterclass.html" class="px-6 py-3 border rounded-md text-indigo-600">Grab free SEBI study breakdown</a>
+      </div>
+      <ul class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-gray-700">
+        <li><strong>93%</strong> of retail F&O traders lose money — we teach why and how to avoid it.</li>
+        <li><strong>4-tier</strong> product ladder: Free → Low → Mid → High-ticket.</li>
+        <li><strong>Compliance-first</strong> — no tips, no live trading; purely educational.</li>
+      </ul>
+    </div>
+    <div class="flex-1">
+      <div class="bg-white rounded-xl p-6 shadow">
+        <h3 class="font-semibold">Get started — free 3-day masterclass</h3>
+        <p class="mt-2 text-sm text-gray-600">Short course + SEBI study breakdown PDF + tools.</p>
+        <form id="signup" class="mt-4 space-y-3" onsubmit="event.preventDefault(); signupHandler();">
+          <input type="text" id="name" placeholder="Full name" class="w-full px-3 py-2 border rounded-md" />
+          <input type="email" id="email" placeholder="Email" class="w-full px-3 py-2 border rounded-md" />
+          <input type="tel" id="whatsapp" placeholder="WhatsApp number (e.g. +91 98xxxxxxx)" class="w-full px-3 py-2 border rounded-md" />
+          <button class="w-full py-2 bg-indigo-600 text-white rounded-md">Get free access</button>
+        </form>
+        <p class="mt-3 text-xs text-gray-500">No tips. No promises. Just systems.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY DN -->
+  <section id="why" class="bg-white border-t py-12">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-2xl font-bold">Why Derivatives Navigator</h2>
+      <p class="mt-3 text-gray-600">Built on regulatory evidence and 18+ years of market experience, our curriculum fixes the exact behavioural and structural failures SEBI identified in retail F&O trading.</p>
+
+      <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-6 border rounded-lg">
+          <h4 class="font-semibold">Evidence-first</h4>
+          <p class="mt-2 text-sm text-gray-600">Curriculum mapped to SEBI's FY22–FY24 findings and loss patterns.</p>
+        </div>
+        <div class="p-6 border rounded-lg">
+          <h4 class="font-semibold">System-based training</h4>
+          <p class="mt-2 text-sm text-gray-600">Learn to design, backtest and manage your own derivatives systems.</p>
+        </div>
+        <div class="p-6 border rounded-lg">
+          <h4 class="font-semibold">Compliance-first</h4>
+          <p class="mt-2 text-sm text-gray-600">No live tips, no guaranteed returns, strict educational framing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section id="courses" class="max-w-6xl mx-auto px-6 py-12">
+    <div class="grid md:grid-cols-3 gap-6">
+      <!-- Low-ticket -->
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h3 class="font-bold text-lg">Starter & Tools</h3>
+        <p class="mt-2 text-sm text-gray-600">Low-cost entry products to build fundamentals.</p>
+        <ul class="mt-4 text-sm space-y-2">
+          <li>F&O Starter Pack — ₹999</li>
+          <li>Backtesting Toolkit — ₹999</li>
+          <li>Risk Management Toolkit — ₹499</li>
+        </ul>
+        <a href="courses.html#low" class="mt-4 inline-block text-indigo-600">See details →</a>
+      </div>
+      <!-- Mid-ticket -->
+      <div class="bg-white p-6 rounded-xl shadow border-2 border-indigo-600">
+        <h3 class="font-bold text-lg">Derivatives Profit Mastery (DPM)</h3>
+        <p class="mt-2 text-sm text-gray-600">Flagship mid-ticket course — ₹11,999</p>
+        <ul class="mt-4 text-sm space-y-2">
+          <li>Options spreads & futures trend systems</li>
+          <li>Volatility regimes & risk frameworks</li>
+          <li>Community Q&A & practical assignments</li>
+        </ul>
+        <a href="courses.html#dpm" class="mt-4 inline-block text-indigo-600">Enroll →</a>
+      </div>
+      <!-- High-ticket -->
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h3 class="font-bold text-lg">Elite Derivatives Mentorship (EDTM)</h3>
+        <p class="mt-2 text-sm text-gray-600">6-month personalised mentorship — ₹1,50,000</p>
+        <ul class="mt-4 text-sm space-y-2">
+          <li>1:1 strategy sessions</li>
+          <li>System development & psychology coaching</li>
+          <li>Qualification & application process</li>
+        </ul>
+        <a href="mentorship.html" class="mt-4 inline-block text-indigo-600">Apply →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPLIANCE -->
+  <section id="compliance" class="bg-indigo-50 py-12">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-2xl font-bold">SEBI-aligned Compliance</h2>
+      <p class="mt-3 text-gray-700">We follow a strict educational model: no live trade tips, no guaranteed returns, and data-driven historical case studies. Every product includes clear disclaimers and an educational-only framing.</p>
+      <ul class="mt-4 grid md:grid-cols-3 gap-4 text-sm text-gray-700">
+        <li>No real-time charts under 3 months</li>
+        <li>No buy / sell / hold recommendations</li>
+        <li>All historical examples are dated and annotated</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS & SOCIAL PROOF -->
+  <section class="max-w-6xl mx-auto px-6 py-12">
+    <h2 class="text-2xl font-bold">What learners say</h2>
+    <div class="mt-6 grid md:grid-cols-3 gap-6">
+      <blockquote class="p-6 bg-white rounded-lg shadow">"The systems approach changed how I trade — no more guessing." — A. Sharma</blockquote>
+      <blockquote class="p-6 bg-white rounded-lg shadow">"Clear, compliant, and practical." — M. Rao</blockquote>
+      <blockquote class="p-6 bg-white rounded-lg shadow">"Worth the mentorship price — focused coaching." — S. Iyer</blockquote>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="bg-white py-12 border-t">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-2xl font-bold">Frequently asked questions</h2>
+      <div class="mt-6 space-y-4 text-sm text-gray-700">
+        <details class="p-4 border rounded"><summary class="cursor-pointer font-semibold">Do you provide trade signals?</summary><div class="mt-2">No. We teach frameworks, systems and historical analysis only. No live tips.</div></details>
+        <details class="p-4 border rounded"><summary class="cursor-pointer font-semibold">Are results guaranteed?</summary><div class="mt-2">No. Trading involves risk. We provide education and tools to manage risk.</div></details>
+        <details class="p-4 border rounded"><summary class="cursor-pointer font-semibold">Who is the founder?</summary><div class="mt-2">Tejas Nikhar — Founder & Chief Research Strategist with 18+ years of market experience.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-gray-200 py-10">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-6">
+      <div>
+        <div class="font-bold text-white">Derivatives Navigator</div>
+        <p class="mt-2 text-sm">SEBI-aligned derivatives education. Built for disciplined traders.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold">Products</h4>
+        <ul class="mt-2 text-sm space-y-1">
+          <li>Free Masterclass</li>
+          <li>DPM Course</li>
+          <li>EDTM Mentorship</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold">Contact</h4>
+        <p class="text-sm mt-2">hello@derivativesnavigator.com</p>
+        <p class="text-sm">Mumbai, India</p>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto px-6 mt-6 text-xs text-gray-500">&copy; 2025 Derivatives Navigator. All educational content is for informational purposes only and not financial advice. All products comply with SEBI education guidelines.</div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
