@@ -1,5 +1,18 @@
 {
   "devDependencies": {
     "netlify-cli": "^23.11.1"
+  },
+  "name": "derivatives_navigator_full_site-(1)",
+  "version": "1.0.0",
+  "description": "This archive contains the static site for Derivatives Navigator. Deploy to Netlify by dragging the folder into Netlify or connecting a GitHub repo.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^2.7.0"
   }
 }
