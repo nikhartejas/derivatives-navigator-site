@@ -37,11 +37,89 @@
       </div>
 
       <button type="submit" class="btn btn-primary">Send me the PDF</button>
-    </form>
+    
+  <!-- BEGIN: Derivatives Navigator consent checkbox + hidden metadata (v1.0) -->
+  <div class="dn-consent-block mt-3" style="margin-top:1rem;">
+    <label class="flex items-start space-x-2 text-sm" style="display:flex;align-items:flex-start;gap:0.5rem;">
+      <input id="consent_checkbox" name="consent" type="checkbox" required style="margin-top:0.35rem;">
+      <span style="font-size:0.95rem;">
+        “I consent to receive educational materials from Derivatives Navigator on WhatsApp. These are educational only and not financial advice.”
+      </span>
+    </label>
+    <p style="font-size:0.8rem;color:#6b7280;margin-top:0.25rem;">
+      You can withdraw consent at any time. We will only send educational content. No financial advice or trade calls.
+    </p>
+  </div>
+
+  <!-- Hidden consent metadata fields -->
+  <input type="hidden" name="lead_id" id="lead_id" value="">
+  <input type="hidden" name="phone_e164" id="phone_e164" value="">
+  <input type="hidden" name="consent_timestamp" id="consent_timestamp" value="">
+  <input type="hidden" name="consent_source" id="consent_source" value="web_form_free-masterclass">
+  <input type="hidden" name="consent_text_version" id="consent_text_version" value="v1.0">
+  <!-- END: Derivatives Navigator consent block -->
+
+</form>
 
     <p class="mt-4 text-sm text-muted">We’ll never sell your data. Educational only.</p>
   </main>
 
   <!-- (copy your existing footer here) -->
+
+<script>
+// Minimal UUID v4 generator
+function dn_uuidv4() {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    var r = crypto.getRandomValues(new Uint8Array(1))[0] & 15;
+    var v = c === 'x' ? r : (r & 0x3 | 0x8);
+    return v.toString(16);
+  });
+}
+
+// Best-effort phone -> E.164 normalization (client side)
+// NOTE: always validate/canonicalize server-side with libphonenumber
+function dn_normalizeToE164(raw) {
+  if (!raw) return '';
+  var s = raw.replace(/[^+\d]/g, '');
+  // If user typed local number (no +), assume India (+91) as default
+  if (!s.startsWith('+')) {
+    if (s.length <= 10) return '+91' + s;
+    return '+' + s;
+  }
+  return s;
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  // prefer form with name="free-masterclass", otherwise fallback to first form
+  var form = document.querySelector('form[name="free-masterclass"]') || document.querySelector('form');
+  if (!form) return;
+
+  form.addEventListener('submit', function (e) {
+    var consent = document.getElementById('consent_checkbox');
+    if (!consent || !consent.checked) {
+      e.preventDefault();
+      alert('Please consent to receive educational materials on WhatsApp to proceed.');
+      return false;
+    }
+
+    // Populate hidden fields
+    var leadIdEl = document.getElementById('lead_id');
+    if (leadIdEl) leadIdEl.value = dn_uuidv4();
+
+    // Try to detect phone input (common names: whatsapp, phone, mobile)
+    var phoneInput = form.querySelector('input[name="whatsapp"], input[name="phone"], input[name="mobile"], input[type="tel"]');
+    var rawPhone = phoneInput ? phoneInput.value.trim() : '';
+    var phoneE164El = document.getElementById('phone_e164');
+    if (phoneE164El) phoneE164El.value = dn_normalizeToE164(rawPhone);
+
+    var tsEl = document.getElementById('consent_timestamp');
+    if (tsEl) tsEl.value = new Date().toISOString();
+
+    // consent_source and consent_text_version are preset hidden inputs
+    // allow submit to continue
+  });
+});
+</script>
+
 </body>
 </html>
