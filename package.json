@@ -2,8 +2,9 @@
   "devDependencies": {
     "netlify-cli": "^23.11.1"
   },
-  "name": "derivatives_navigator_full_site-(1)",
+  "name": "derivatives-navigator-site",
   "version": "1.0.0",
+  "private": true,
   "description": "This archive contains the static site for Derivatives Navigator. Deploy to Netlify by dragging the folder into Netlify or connecting a GitHub repo.",
   "main": "index.js",
   "scripts": {
